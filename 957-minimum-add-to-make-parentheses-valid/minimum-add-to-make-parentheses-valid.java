@@ -7,10 +7,12 @@ class Solution {
         for(char c : s.toCharArray()) {
             if(c == '(') {
                 open_count++;
-            } else if(c == ')' && open_count > 0) {
-                open_count--;
             } else {
-                close_count++;
+                if(open_count > 0) {
+                    open_count--;
+                } else {
+                    close_count++;
+                }
             }
         }
         return open_count + close_count;
