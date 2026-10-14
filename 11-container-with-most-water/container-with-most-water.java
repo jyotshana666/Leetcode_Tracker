@@ -10,11 +10,8 @@ class Solution {
 
             maxArea = Math.max(maxArea, area);
 
-            if(height[l] < height[r]) {
-                l++;
-            } else {
-                r--;
-            }
+            while (l < r && height[l] <= h) l++;
+            while (l < r && height[r] <= h) r--;
         }
         return maxArea;
     }
